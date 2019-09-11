@@ -41,3 +41,21 @@ In this lesson, we are going to take a look at how to **use** Dockerfile and **c
     etc...
 
 [source](https://docs.docker.com/engine/reference/builder/)
+
+## CLI command
+
+    * To Add image name to Dockerfile image.
+
+    $ docker build -t <IMAGE_NAME> .
+    // IMAGE_NAME convention : <user_name>/<image_purpose>:<version>
+
+
+    * To Run newly created docker image.
+
+    $ docker run <IMAGE_NAME>
+
+## Key Takeaways 🎯
+
+- Docker creates new image on every steps in **Dockerfile**.
+- Docker will use *cached* images if nothing has been changed in **Dockerfile**.
+- Docker will use *cached* images **until** the new change in **Dockerfile**, then every subsequent steps creates new images.
