@@ -1,0 +1,22 @@
+{
+  "name": "3-node-web-app",
+  "version": "1.0.0",
+  "description": "In this lesson, we are going to be looking at how to do following list of tasks:",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "npm run build && node ./dist/index.js",
+    "clean": "rimraf index.js node_modules"
+  },
+  "keywords": [],
+  "author": "shawnkoon",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
