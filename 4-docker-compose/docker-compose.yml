@@ -1,0 +1,12 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+    container_name: '4-redis'
+  node-app:
+    restart: 'on-failure'
+    build: .
+    image: 'shawnkoon/4-node-app:latest'
+    container_name: '4-express'
+    ports:
+      - "3000:3000"
