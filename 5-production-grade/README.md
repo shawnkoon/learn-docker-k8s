@@ -2,7 +2,7 @@
 
 In this lesson, we are going to be learning about how to create proudction quality application using docker. Goal is to create Development/Production Docker setups.
 
-## How to run
+## How to run 💻
 
 - Development Server
 
@@ -41,3 +41,24 @@ In this lesson, we are going to be learning about how to create proudction quali
     $ docker-compose up
 
     ```
+
+- Production Server
+
+    ```bash
+
+    # Build npm && create nginx server with built files.
+    $ docker build -t shawnkoon/5-production-web:1.0.0 .
+
+    # Create & run docker container.
+    $ docker run -p 8080:80 shawnkoon/5-production-web:1.0.00
+    ```
+
+  - Then, navigate to `http://localhost:8080`.
+
+## Key Takeaways 🎯
+
+- If utilized correctly, docker can be used for both development and production workflow.
+- Following are dockerfile on purpose of `development` workflow.
+  - `Dockerfile.dev`
+  - `docker-compose.yml`
+- You can add `as <name>` after `FROM <img_name>` in dockerfile, which then can be used as a reference from next block of container steps.
