@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: 'shawnkoon/5-production-web:latest'
+    container_name: '5-react'
+    ports:
+      - '3000:3000'
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: 'shawnkoon/5-production-web:latest'
+    container_name: '5-test'
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    command: ["npm", "run", "test"]

@@ -28,4 +28,16 @@ In this lesson, we are going to be learning about how to create proudction quali
     Note that the development build is not optimized.
     To create a production build, use npm run build.
 
+    # If you want to sync files
+    # -v /usr/app/node_modules make it so that you don't need to have node_modules locally.
+    $ docker run -p 3000:3000 -v /usr/app/node_modules -v $(pwd):/usr/app shawnkoon/5-production-web
+
+    # Running test
+    $ docker run -it shawnkoon/5-production-web npm run test
+
+
+    # OR...
+
+    $ docker-compose up
+
     ```
